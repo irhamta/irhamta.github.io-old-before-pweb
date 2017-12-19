@@ -70,7 +70,7 @@ ga('send', 'pageview');
 				<p class="intro-text">
 					Here you can find the codes <br> that I've used and developed
 				</p>
-				<a href="#list-of-codes" class="btn btn-circle page-scroll">
+				<a href="#AGN-Specfit" class="btn btn-circle page-scroll">
 				<i class="fa fa-angle-double-down animated"></i>
 				</a>
 			</div>
@@ -80,20 +80,57 @@ ga('send', 'pageview');
 </header>
 
 
+<!-- AGN-Specfit -->
+<section id="AGN-Specfit">
+<div class="container content-section text-center">
+	<h2><a href="https://github.com/irhamta/AGN-Specfit">AGN-Specfit</a></h2>
+	<div class="col-lg-8 col-lg-offset-2">
+		<p class = "text-justify">
+			<strong><a href="http://github.com/irhamta/AGN-Specfit" style="border-bottom:1px dashed">AGN-Specfit</a></strong> (AGN Spectral Fitting) is a modified version of <a href="https://github.com/gcalderone/qsfit" style="border-bottom:1px dashed">QSFit</a>. It is created as a pipeline to perform the analysis of SDSS Type 1 Active Galactic Nuclei optical and ultraviolet spectra. The prerequisites to run it are <code>Python</code> (version 2.7+), <code>IDL</code> (version &ge; 8.1), and <code>Gnuplot</code> (version &ge; 5.0). To make use the pipeline, you have to:
+			<ol class = "text-justify" style="font-size:large">
+				<li>Add SDSS spectra files to "data" directory.</li>
+				<li>Create list of file names, redshifts, and E(B-V) and store it to "QSO_name.csv".</li>
+				<li>Create directories which are named:</li>
+
+				<ul>
+					<li>"output" and "table", to store the calculation result in nested and flattened structure files respectively.</li>
+					<li>"plot", to save all the plot data to be later loaded in <code>Gnuplot</code>.</li>
+					<li>"result", to store the merged tables from "table" folder.</li>
+				</ul>
+
+				<li>Start an <code>IDL</code> session in your working directory. Then, compile and run the <code>IDL</code> scripts:
+				<pre><code>IDL&gt; CD, &quot;D:\path\where\AGN-Specfit\is\located&quot; <br>IDL&gt; compile <br>IDL&gt; process_spectra</code></pre>
+				</li>
+
+				<li>Use the <code>Python</code> scripts to combine all tables in "table" folder into one concatenated table. You have to install necessary modules first:
+				<pre><code class="language-python">pip install -r requirements.txt <br>python multi_make_table.py</code></pre>
+				</li>
+
+				<li>You can specify which columns to keep by modifying "result/columns_to_keep.txt" files.</li>
+				<li>Edit the scripts if necessary to suit your needs.</li>
+			</ol>
+		</p>
+		<p class = "text-justify" >Further details about how to use QSFIT can be found in <a href="http://qsfit.inaf.it" style="border-bottom:1px dashed">http://qsfit.inaf.it</a>. The reference paper is <a href="https://arxiv.org/abs/1612.01580" style="border-bottom:1px dashed">https://arxiv.org/abs/1612.01580</a>.</p>
+	</div>
+</div>
+</section>
+
+
 <!-- Page Sample Section -->
 <section id="list-of-codes">
 <div class="container content-section text-center">
-		<div class="col-lg-8 col-lg-offset-2">
+	<div class="col-lg-8 col-lg-offset-2">
+		<h2>List of Codes</h2>
 		<p>
 			<figure class="gallery">
 				<img src="img/coding.jpg" alt="" height="300 px" width="530 px">
 			</figure>
-		</p>			
-
-		<p>
-			At the moment, my codes are publicly available and maintained on my Github pages below.
 		</p>
 
+		<p>
+			All of my codes are publicly available and maintained on my Github pages below.
+		</p>
+		
 		<p>
 			<a href="https://github.com/irhamta/" class="btnghost"><i class="fa fa-github fa-2x"></i> Github</a>
 		</p>
@@ -104,7 +141,7 @@ ga('send', 'pageview');
 <!-- Footer -->
 <footer>
 <div class="container text-center">
-  <p class="credits"> Copyright &copy; Irham taufik andika 2017<br>
+  <p class="credits"> Copyright &copy; Irham Taufik Andika 2017<br>
   	Image Credits: <a href="https://www.jpl.nasa.gov/">NASA</a> and <a href="http://eso.org/public/">ESO</a></p>
 </div>
 </footer>
